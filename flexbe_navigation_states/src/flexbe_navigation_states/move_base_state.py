@@ -7,6 +7,7 @@ from actionlib_msgs.msg import GoalStatus
 from move_base_msgs.msg import *
 from geometry_msgs.msg import Pose, Point, Quaternion, Pose2D
 from tf import transformations
+import rospy
 
 """
 Created on 11/19/2015
@@ -73,8 +74,8 @@ class MoveBaseState(EventState):
         goal.target_pose.pose = Pose(position = pt,
                                      orientation = Quaternion(*qt))
 
-        goal.target_pose.header.frame_id = "odom"
-        # goal.target_pose.header.stamp.secs = 5.0
+        goal.target_pose.header.frame_id = "map"
+        goal.target_pose.header.stamp = rospy.Time.now()
 
         # Send the action goal for execution
         try:

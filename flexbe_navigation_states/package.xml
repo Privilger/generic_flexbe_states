@@ -18,6 +18,7 @@
   <run_depend>geometry_msgs</run_depend>
   <run_depend>control_msgs</run_depend>
   <run_depend>trajectory_msgs</run_depend>
+  <run_depend>rospy</run_depend>
 
   <export>
     <flexbe_states />
